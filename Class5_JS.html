@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+        <title> JS Class 5</title>
+        <script>
+            function MySecondFunction(){
+                document.getElementById("TASK1").innerHTML= 
+                "Dalai Lama";
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Home Work - Class 5</h1>
+        <p id="TASK1"></p> 
+        <script> 
+            document.getElementById("TASK1").innerHTML= "Element Content";
+        </script>
+        <!-- task #1 --> 
+
+        <p id= "TASK2"></p>
+        <script>
+            function MyFirstFunction(a,b) {
+                if ( a>b) {
+                    return a;
+                }
+                else                
+                return b;
+            }
+
+            document.getElementById("TASK2").innerHTML= 
+            MyFirstFunction(3,5);
+        </script>
+        <!-- task #2 --> 
+
+        <p id="TASK3">This line is going to be changed, because everything is temporary in our life</p>
+        <button type ="button" onclick="document.getElementById('TASK3').innerHTML= 'You only live once - YOLO' " > Text Changer</button>
+        <!-- task #3 --> 
+
+        <p id="TASK4">Remember that great love and great accomplishments involve great risk</p>
+        <button type="button" onclick="MySecondFunction()"> Push to know who say that </button>
+
+        <br><br>
+        <button onclick="document.getElementById('MyFacebookPic').src='FacePick.jpg' ">For My Facebook Profile</button>
+        <img id="MyFacebookPic" src="dar.png" alt="my picture" width="150">
+        <button onclick=""></button>
+        <!-- task #4 --> 
+
+
+    </body>
+
+
+</html>
