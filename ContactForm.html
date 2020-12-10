@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Contact Dar Pelta</title>
+  </head>
+  <link rel="stylesheet" href="styles.css" />
+  <body>
+      <div class="wrapper">
+    <h1 class="form-title"
+       
+    >
+      For Contact Dar Pelta
+    </h1>
+    <div class="wrapper">
+      <div id="formVisible">
+        <div class="form-container">
+    <form onsubmit="return confirmForm()" >
+
+     
+      <div class="form-group">
+        <label for="ContactorName"> Who wants to Contact? </label>
+        <input type="text" id="ContactorName" name="ContactorName" placeholder="Who are you? :)" />
+      </div>
+      <div class="form-group">
+        <label for="FirstName"> First Name</label>
+        <input type="text" id="FirstName" name="FirstName" placeholder="Enter your name"/>
+      </div>
+      <div class="form-group">
+        <label for="Email">Email for Response</label>
+        <input type="text" id="Email" name="Email" placeholder="Enter your email" />
+      </div>
+
+       <div class="form-group">
+        <label for="selectGender"> Select gender</label>
+          <select id='selectGender' name="selectGender">
+              <option value="0">Male</option>
+              <option value="1">Female</option>
+              <option value="2">Other</option>
+          </select>
+       </div>
+      <div class="form-group">
+        <label for="comment">&nbsp;</label>
+        <textarea id="comment" name="comment" cols="40" rows="5" placeholder="Please leave a comment"></textarea>
+      </div>
+
+      <div class="form-group span-2">
+        <button type="submit" value="Send form" class="button" > Send form</button>
+        <button class="button" onclick="backToHome()">back to Dar pelta's CV</button>
+        </div>
+
+      
+    </form>
+    </div>
+  </div>
+  <div id="formDone">
+    Thank you for your feedback!
+    <div class="form-group">
+    <button class="button" onclick="backToHome()">back to Dar pelta's CV</button>
+  </div>
+  </div>
+  </div>
+    <script src="./scripts.js" ></script>
+
+</body>
+</html>
