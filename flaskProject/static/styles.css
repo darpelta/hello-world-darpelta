@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+
+body {
+  background: -webkit-linear-gradient(
+    to bottom,
+    #2c3e50,
+    #bdc3c7
+  ); 
+
+  background: linear-gradient(
+    to bottom,
+    #2c3e50,
+    #bdc3c7
+  ); 
+
+  color: black;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+p {
+  margin: 0;
+  color: #1e1e1f;
+  font-size: 15px;
+  text-align: left;
+}
+
+.wrapper {
+  width: 1200px;
+  margin: 0 auto; /** centralize page- 0 up & down, auto to sides**/
+  position: relative;
+
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 32px;
+  font-family: 'Dancing Script', cursive;
+  color: #2c3e50;
+}
+
+.row > div {
+  float: left; /** dont break the row, make it flow **/
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 35px;
+}
+
+.grid-container > div {
+  padding: 5px 25px;
+  border-radius: 5px; /* circle edges*/
+}
+
+ul {
+  color: #1e1e1f;
+  font-size: 15px;
+  text-align: left;
+} /** list **/
+
+h4 {
+  text-decoration: underline;
+  margin-bottom: 14px; /*merdign afters main headers*/
+  color: #2c3e50;
+}
+
+.item1 {
+  /* education*/
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+  background-color: white;
+  padding: 15px !important;
+}
+
+.item2 {
+  /* work experience*/
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+  background-color: white;
+}
+
+.item2 ul li {
+  line-height: 21px;
+  margin-bottom: 10px;
+}
+.item3 {
+  /* extracurricular*/
+  grid-column: 2 / span 1;
+  grid-row: 3 / span 1;
+  background-color: white;
+  padding: 15px !important;
+}
+
+.item4 {
+  /* picture*/
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+  background-color: white;
+  text-align: center;
+}
+
+.item4 img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 100% 0%;
+  border: 4px solid white;
+  box-shadow: 18px 0px #bdc3c7;
+}
+
+.item5 {
+  /* extra info*/
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 2;
+  background-color: white;
+  padding-top: 90px !important;
+}
+
+h4,h1 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+h5 {
+  margin: 12px 0 5px 0;
+  font-size: 16px;
+  color: #2c3e50;
+}
+
+.img-container {
+  margin: 0px 0 0 20px;
+}
+
+.info-container {
+  margin: 22px 0 0 20px;
+  width: 61%;
+}
+
+.skills {
+  margin-top: 50px;
+}
+.languages {
+  margin-top: 70px;
+  text-align: center;
+}
+
+.languages ul li {
+  line-height: 25px;
+}
+
+.button {
+  display: inline-block;
+  border: 1px solid #dbd8d7;
+  padding: 5px;
+  width: 80%;
+  margin-bottom: 10px;
+  position: relative;
+  height: 20px;
+  background-color: transparent;
+  border-radius: 5px;
+  z-index: 100;
+}
+
+.button:hover {
+  color: white;
+  transition: 0.5s;
+  border: 1px solid #2c3e50;
+}
+
+.button::after {
+  content: ' ';
+  display: block;
+  padding: 5px;
+  width: 97.5%;
+  position: absolute;
+  left: -1px;
+  bottom: -1px;
+  height: 0px;
+  background: #2c3e50;
+  opacity: 0;
+  z-index: -1;
+}
+
+.button:hover::after {
+  height: 22px;
+  transition: 0.3s;
+  opacity: 0.7;
+  border-radius: 5px;
+}
+
+.form-title {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
+.form-container {
+  width: 800px;
+  margin: 0 auto;
+  color: white;
+}
+
+.form-container .form-group {
+  margin: 10px;
+}
+
+.form-container .form-group.span-2 {
+  margin-top: 50px;
+}
+
+.form-container .form-group label {
+  display: inline-block;
+  width: 300px;
+}
+
+
+select {
+  width: 318px;
+}
+
+.form-container .button,
+#formDone .button {
+  color: white;
+  width: 250px;
+  height: 30px;
+  cursor: pointer;
+  margin-right: 119px;
+}
+#formDone .form-group {
+  margin-top: 30px;
+} /* button */
+
+#formDone {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 30px;
+}

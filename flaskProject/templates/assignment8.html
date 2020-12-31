@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment8</title>
+</head>
+
+<body>
+
+    <h2>Hi, good to see you </h2>
+
+    {% if First_name%}
+    <H3>{{ First_name }} {{ Last_name | upper}}</H3>
+
+        {% block cart %}
+            <h2>My Favorite Songs of 2020 :</h2>
+            <ol>
+                {% for song in Favorite_songs_2020 %}
+
+                    <li>{{ song }}</li>
+                    {% endfor %}
+            </ol>
+        {% endblock %}
+
+    {% else %}
+    <h3>You are not signed to this website</h3>
+    {% endif %}
+
+
+
+    {% include ('Footer.html') %}
+
+</body>
+</html>
