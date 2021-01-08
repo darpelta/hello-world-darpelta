@@ -17,7 +17,6 @@ function createUserList(users){
                 <a herf="mailto:${user.email}">Send Email</a>
             </div>
             `;
-    
         curr_main.appendChild(section);
     
     } 

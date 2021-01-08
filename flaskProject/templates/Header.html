@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-
 <body>
+
     {% if session.get('logged_in') %}
-    <footer>Thanks {{ session.get('username') }} for visiting, Have a happy new year</footer>
+    <footer>Nice to see you, {{ session.get('username') }} </footer>
     {% else %}
-    <footer>Thanks stranger for visiting, Have a happy new year</footer>
+    <HEADER>Sorry, I don't know your username </HEADER>
 
     {% endif %}
+
 </body>
 </html>
