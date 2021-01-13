@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment10 Users</title>
+</head>
+<body>
+
+    <h1>Hi, you can see here all the users:</h1>
+    <ul>
+        {% if users %}
+        {% for user in users %}
+        <li>
+            {{ user.id }} <b>{{ user.name }}</b> ({{ user.email }})
+        </li>
+        {% endfor %}
+    {% endif %}
+
+    </ul>
+     <h3>{{insert_message }}:</h3>
+    <a href="/Assignment10">Insert user</a>
+
+    <h2>Delete user:</h2>
+    <form action="delete_user" method="GET">
+        User ID:<label><input name="id" type="text"></label>
+        <input type="submit">
+         <h2>{{delete_message }}:</h2>
+    </form>
+
+    <h2>Update user:</h2>
+    <form action="update_user" method="GET">
+        User Name:<label><input name="name" type="text"></label>
+        User ID:<label><input name="id" type="text"></label>
+        <input type="submit">
+    </form>
+</body>
+</html>

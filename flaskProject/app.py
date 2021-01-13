@@ -1,8 +1,11 @@
-from flask import Flask, render_template, url_for, session, request, redirect
+from flask import Flask, render_template, session, request, redirect
+from Assignment10.Assignment10 import Assignment10
 
 
 app = Flask(__name__)
 app.secret_key = '040194'
+app.register_blueprint(Assignment10)
+
 
 
 @app.route('/')
