@@ -6,7 +6,7 @@
 </head>
 <body>
 
-    <h1>Hi, you can see here all the users:</h1>
+    <h1>Hi, This is your user list:</h1>
     <ul>
         {% if users %}
         {% for user in users %}
@@ -17,21 +17,21 @@
     {% endif %}
 
     </ul>
-     <h3>{{insert_message }}:</h3>
-    <a href="/Assignment10">Insert user</a>
+     <h3>{{insert_message }}</h3>
+    <a href="/Assignment10">For insert more users - click here</a>
 
-    <h2>Delete user:</h2>
+    <h2>Delete User:</h2>
     <form action="delete_user" method="GET">
         User ID:<label><input name="id" type="text"></label>
         <input type="submit">
-         <h2>{{delete_message }}:</h2>
+         <h3>{{delete_message }}</h3>
     </form>
 
-    <h2>Update user:</h2>
+    <h2>Update User:</h2>
     <form action="update_user" method="GET">
         User Name:<label><input name="name" type="text"></label>
         User ID:<label><input name="id" type="text"></label>
-        <input type="submit">
+        <input type="submit" value="update">
     </form>
 </body>
 </html>

@@ -20,19 +20,17 @@ def interact_db(query, query_type: str):
     cursor.execute(query)
 
     if query_type == 'commit':
-        # use for insert /update/delete
         connection.commit()
         return_value = True
 
     if query_type == 'fetch':
-        # use for select statement
         query_result = cursor.fetchall()
         return_value = query_result
 
     connection.close()
     cursor.close()
     return return_value
- # ------------------------------------------------------ #
+
 
 @Assignment10.route('/Assignment10_users')
 def users():
@@ -49,11 +47,11 @@ def insert_user():
         password = request.form['password']
         query = "INSERT INTO users(name, email, password) VALUES ('%s', '%s', '%s')" % (name, email, password)
         interact_db(query, query_type='commit')
-        message="the new user was insert successfully!"
+        message = "User was inserted successfully!"
         query = "SELECT * FROM users"
         query_result = interact_db(query, query_type='fetch')
         return render_template('/Assignment10_users.html', insert_message=message, users=query_result)
-        message = 'There was a problem. Please try again.'
+        message = ' Please try again, we figured a problem.'
     return render_template('/Assignment10.html', insert_message=message)
 
 @Assignment10.route('/delete_user', methods=['GET', 'POST'])
@@ -63,7 +61,7 @@ def delete_user():
         user_id = request.args['id']
         query = "DELETE FROM users WHERE id='%s'" % user_id
         interact_db(query, query_type='commit')
-        delete_message = f'user with id {user_id} is deleted'
+        delete_message = f'ID {user_id} was deleted'
         query = "SELECT * FROM users"
         query_result_all = interact_db(query, query_type='fetch')
     return render_template('/Assignment10_users.html', delete_message=delete_message, users=query_result_all)
