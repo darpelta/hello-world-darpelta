@@ -1,9 +1,9 @@
 from flask import Flask, redirect, url_for, render_template, request
 from flask import request
 from flask import session
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, jsonify
 import mysql.connector
-import os
+
 
 Assignment10 = Blueprint('Assignment10', __name__,
                         static_folder='static',
@@ -77,3 +77,28 @@ def update_user():
         interact_db(query, query_type='commit')
         return redirect('/Assignment10_users')
     return 'updated user'
+
+@Assignment10.route('/assignment11/users')
+def get_users():
+    if request.method == 'GET':
+        query = "select * from users"
+        query_result = interact_db(query=query, query_type='fetch')
+    return jsonify({'Success': 'True',
+                    'Data': query_result})
+
+@Assignment10.route('/assignment11/users/selected',defaults={'SOME_USER_ID':'2'})
+@Assignment10.route('/assignment11/users/selected/<string:SOME_USER_ID>')
+def get_user(SOME_USER_ID):
+    if request.method == 'GET':
+        query = "select * from users where id='%s';" %(SOME_USER_ID)
+        query_result= interact_db(query=query, query_type='fetch')
+        if len(query_result) == 0:
+            return jsonify({
+                "User": "Is Not Exist!",
+                'Success': 'False',
+                'Data': [],
+            })
+        else:
+             return jsonify({
+                'Success': 'True',
+                'Data': query_result[0]})
